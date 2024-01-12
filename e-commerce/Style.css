@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --Orange: rgba(255, 210, 31, 0.964);
+  --Pale-orange: hsl(25, 100%, 94%);
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* (with 75% opacity for lightbox background) */
+  --Black: hsl(0, 0%, 0%);
+}
+/* Default styles */
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  max-width: 1000px;
+  height: 100vh;
+}
+/* visibility actions */
+.hidden {
+  display: none;
+}
+.invisible {
+  display: none !important;
+}
+/* Basic styles for the navbar */
+header {
+    background-color: rgb(9, 59, 7);
+    background: linear-gradient(to bottom right, rgb(137, 106, 2), rgb(226, 226, 39));
+    /* padding: 10px; */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; /* Adjust the logo size as needed */
+}
+.icon{
+    margin-right: 15px;
+    position: relative;
+}
+.Items{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: red;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    transform: translate(-20%, 20%);
+    color: white;
+    text-align: center;
+    display: none;
+}
+.navbar {
+    list-style: none;
+    display: flex;
+}
+
+.nav_link {
+    margin-right: 20px;
+    color: white; /* Change this to your desired text color */
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* ---------------------------------- */
+main {
+    margin-top: 30px;
+    display: flex;
+    /* height: calc(100vh - 150px); */
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: 2rem;
+    position: relative; /* Add position: relative */
+    z-index: 0; /* Reset the z-index */
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Ensure the thumbnails are above other elements */
+}
+
+.main-thumbnail {
+    border-radius: 10px;
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    cursor: pointer;
+}
+  .preview {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .preview img {
+    width: 90px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .preview img:hover {
+    opacity: 60%;
+  }
+  
+  .selected {
+    border: 2px solid var(--Orange);
+    opacity: 50%;
+  }
+  .content {
+    margin-left: 3rem;
+  }
+  .company {
+    color: var(--Orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .info {
+    color: var(--Dark-grayish-blue);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .details{
+    height: 200px;
+    max-width: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .details p{
+    padding-bottom: 12px;
+  }
+  .price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .new-price {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .new-price p {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .new-price span {
+    margin-left: 1rem;
+    background-color: var(--Pale-orange);
+    padding: 0.3rem;
+    border-radius: 6px;
+    color: var(--Orange);
+    font-weight: 700;
+  }
+  .old-price {
+    color: var(--Grayish-blue);
+    text-decoration: line-through;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .amount-btn {
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 35%;
+    border-radius: 7px;
+    justify-content: space-between;
+  }
+  .amount-btn button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .amount {
+    font-weight: 700;
+  }
+  .add_btn {
+    cursor: pointer;
+    width: 65%;
+    margin-left: 1rem;
+    background-color: var(--Orange);
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 7px;
+    padding: 1rem;
+  }
+  .add_btn:hover {
+    opacity: 70%;
+  }
+  .add_btn img {
+    height: 25px;
+    width: 25px;
+    filter: brightness(5);
+  }
+  @media only screen and (max-width: 950px) {
+    header {
+      padding: 10px; /* Adjust the padding for the header */
+    }
+  
+  
+    .logo img {
+      top: 0;
+    }
+  
+    .navbar {
+      display: none;
+      align-items: center;
+      margin-top: 10px; /* Add some space between logo and navbar links */
+    }
+  
+    .nav_link {
+      margin-right: 0;
+      margin-bottom: 10px; /* Add space between navbar links on smaller screens */
+    }
+  
+    main {
+      flex-direction: column-reverse; /* Stack main content vertically on smaller screens */
+      margin-inline: 1rem;
+    }
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .thumbnails {
+      order: 2; /* Move thumbnails section below content on smaller screens */
+    }
+  
+    .main-thumbnail {
+      height: auto; /* Make the main thumbnail image responsive */
+    }
+
+    .preview{
+      padding-bottom: 20px;
+    }
+  
+    .content {
+      margin-left: 0; /* Reset left margin for content */
+    }
+    .buttons{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+  
+    
+    .add_btn {
+      width: 100%; /* Make amount-btn and add_btn full width on smaller screens */
+      margin-left: 0;
+    }
+    .amount-btn
+    {display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  }
+  @media only screen and (max-width: 450px) {
+    .details{
+      align-items: center;
+      justify-content: center;
+    }
+    .title {
+      font-size: 1.4rem;
+    }
+  }
